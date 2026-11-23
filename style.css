@@ -6,36 +6,43 @@
 ul {
   list-style: none;
 }
-html,
-body {
-  height: 100%;
-  width: 100%;
-}
+
 body {
   width: 1200px;
   margin: 0px auto;
   text-align: center;
-  height: 100%;
-  background-image: url(img/background2.png);
+  /* overflow-y: hidden; */
+  min-height: 100vh;
+  background-image: url(img/background3.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
 .wrap {
-  margin: -30px auto;
-  text-align: right;
+  margin: -40px auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
 }
-#btn {
+/* #btn {
   height: 30px;
-}
+} */
 h2 {
   text-align: center;
-  margin: 30px 0px;
+  padding: 30px 0px;
   color: white;
+  letter-spacing: 3px;
+  font-family: "Chiron GoRound TC", sans-serif;
+  font-size: 50px;
 }
-input {
+
+#search {
+  width: 200px;
   height: 30px;
   text-align: center;
-  margin-top: -15px;
+  font-family: "Jua", sans-serif;
+  /* color: #000; */
 }
 .weather {
   display: flex;
@@ -54,6 +61,8 @@ li {
   /* border: 1px solid #ccc; */
   padding: 20px;
   text-align: center;
+  margin: 50px 0px 0px;
+  font-family: "Chiron GoRound TC", sans-serif;
 }
 .wrap01 {
   display: flex;
@@ -77,13 +86,14 @@ li {
   height: 100%;
   object-fit: cover;
 }
-button {
-  padding: 5px;
+.btn {
   cursor: pointer;
-  border: none;
-  border-radius: 5px;
+  font-size: 15px;
+  font-family: "Chiron GoRound TC", sans-serif;
+  letter-spacing: 2px;
 }
 .image p {
   margin-top: 10px;
   color: #333;
+  font-family: "Jua", sans-serif;
 }

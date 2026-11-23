@@ -5,6 +5,8 @@ let timeEls = document.querySelectorAll("li p");
 let tempEls = document.querySelectorAll("li .temp");
 let h2 = document.querySelector("h2");
 let img = document.querySelector(".image img");
+let time = document.querySelector(".image p");
+let num = document.querySelector("p span");
 let APIkey = `7e766285d8c60f6716840a126694359f`;
 
 function render(data) {
@@ -131,7 +133,12 @@ async function weather1(cityname) {
   let response = await fetch(
     `https://api.openweathermap.org/data/2.5/forecast?q=${cityname}&appid=${APIkey}&lang=kr&units=metric`,
   );
+  if (!response.ok) {
+    alert("도시 이름을 영어로 입력해주세요.");
+    return;
+  }
   h2.textContent = cityname.toUpperCase();
+
   let data = await response.json();
   console.log(data);
 
@@ -139,17 +146,35 @@ async function weather1(cityname) {
   let response2 = await fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=${APIkey}&units=metric&lang=kr`,
   );
+  if (!response2.ok) return;
   let currentData = await response2.json();
 
   let weather2 = currentData.weather[0].main;
+
   change(weather2);
 }
+getLocation();
+
+let start = () => {
+  let day = new Date();
+  let hour = day.getHours();
+  let min = day.getMinutes();
+
+  min = min > 9 ? min : `0${min}`;
+  time.textContent = `LOCAL TIME ${hour}:${min} | CURRENT WEATHER`;
+};
+
+setInterval(start, 1000);
+start();
 
 function se() {
   let cityname = sea.value;
+
+  if (cityname === "") {
+    alert(`도시 이름을 영어로 입력해주세요.`);
+    return;
+  }
   weather1(cityname);
   sea.value = "";
 }
 btn.addEventListener("click", se);
-
-getLocation();
