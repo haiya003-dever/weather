@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="style.css" class="css" />
+  </head>
+  <body>
+    <h2>현재날씨</h2>
+    <button onclick="getLocation()">현재위치</button>
+    <button onclick="weather1('seoul')">서울</button>
+    <button onclick="weather1('busan')">부산</button>
+    <button onclick="weather1('incheon')">인천</button>
+    <button onclick="weather1('jeju')">제주</button>
+    <button onclick="weather1('daejeon')">대전</button>
+    <div class="wrap">
+      <input
+        id="search"
+        placeholder="CITY NAME"
+        onKeyPress="if(event.keyCode == 13){se()} "
+      />
+      <button id="btn">검색</button>
+    </div>
+    <div class="weather">
+      <ul>
+        <li>
+          <img class="icon" />
+          <p></p>
+          <div class="temp"></div>
+        </li>
+        <li>
+          <img class="icon" />
+          <p></p>
+          <div class="temp"></div>
+        </li>
+        <li>
+          <img class="icon" />
+          <p></p>
+          <div class="temp"></div>
+        </li>
+        <li>
+          <img class="icon" />
+          <p></p>
+          <div class="temp"></div>
+        </li>
+        <li>
+          <img class="icon" />
+          <p></p>
+          <div class="temp"></div>
+        </li>
+        <li>
+          <img class="icon" />
+          <p></p>
+          <div class="temp"></div>
+        </li>
+        <li>
+          <img class="icon" />
+          <p></p>
+          <div class="temp"></div>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap01">
+      <div class="chart">
+        <canvas id="myChart"></canvas>
+      </div>
+      <div class="image">
+        <img src="img/sunny.gif" />
+        <p>CURRENT WEATHER</p>
+      </div>
+    </div>
+    <script src="js/custom.js"></script>
+    <script src="custom.js"></script>
+  </body>
+</html>
